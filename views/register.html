@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="CSS.css">
+    <script src="/Users/elenamariefrees/Desktop/Eksamen/routes/routes.js"></script>
+</head>
+<body>
+<form id="register-form" action="/register-user" method="POST"> 
+    <p>Sign Up:</p>
+    <label for = "username">Enter Fullname:</label>
+    <input id="username" type="text" placeholder="Fullname" value=""/>
+        <br></br>
+    <label for = "password">Enter Password:</label>
+    <input id="password" type="password" placeholder="Password" value=""/>
+         <br></br>
+    <label for="email">Enter email:</label>
+    <input id="email" type="email" placeholder="1234@mail.dk">
+         <br></br>
+    <label for="birthday">Enter Birthday: </label>
+    <input type="date" id="birthday">
+        <br></br>
+    <p>Select your gender:</p>
+        <input type="checkbox" name="gender" value="female" id="female">
+        <label for="female">Female</label>
+        <input type="checkbox" name="gender" value="male" id="male">
+        <label for="male">Male</label>
+        <input type="checkbox" name="gender" value="other" id="other">
+        <label for="other">Other</label>
+            <br></br>
+     <p>Select your interest:</p>
+        <input type="checkbox" name="interest" value="Female" id="Female">
+        <label for="Female">Female</label>
+        <input type="checkbox" name="interest" value="Male" id="Male">
+        <label for="Male">Male</label>
+        <input type="checkbox" name="interest" value="Other" id="Other">
+        <label for="Other">Other</label>
+            <br></br>
+    
+
+    <!-- <input id="rgstr_btn" type="submit" value="Submit account" />  -->
+    <input id="rgstr_btn" type="submit" value="Submit account" onClick="store()"/> 
+    <br></br>
+</form>
+</body>
+</html>
