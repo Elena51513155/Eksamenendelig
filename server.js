@@ -73,7 +73,7 @@ app.post('/register-user', function (request, response) {
         var sql = "INSERT INTO eksamen.users (username, password, email, birthday, gender, interest) VALUES (?, ?, ?, ?, ?, ?)";
   connection.query(sql, [username, password, email, birthdate, gender, interest], function (err, result) {
     if (err) throw err;
-    console.log("1 record inserted");
+    console.log("one record added");
   });
     }
 
