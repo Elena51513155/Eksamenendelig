@@ -1,15 +1,15 @@
 //var User = require('../models/user');
 var path = require('path');
 
-var config = require('../databaseConfig.js');
+var config = require('../database/dbConfig.js');
 var con = config.connection;
 
-// Display list of all users.
+// Show list of all users, click the button
 exports.user_list_possible_matches = function(req, res) {
     res.send('NOT IMPLEMENTED: user possible matches list');
 };
 
-// Display detail page for a specific user.
+// show a detailed page for a specific user.
 exports.user_detail = function(req, res) {
 
 	if(req.session.loggedin == true && req.session.email) {
@@ -35,7 +35,7 @@ exports.user_create_get = function(req, res) {
     res.sendFile(path.join(__dirname + '/../views/register.html'));
 };
 
-// Handle user create on POST.
+// User create (POST), insert all values and if succesfull redirect to user page
 exports.user_create_post = function(req, res) {
     var email = req.body.email;
 	var password = req.body.password;

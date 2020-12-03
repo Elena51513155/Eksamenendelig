@@ -7,14 +7,14 @@ The person is interested in: <p><%= user.interest %></p>
 Like:  
 	<form action="/matches/<%= user.id %>/<%= user.name %>" method="POST">
 		<input type="hidden" name="what_to_do" id ="what_to_do" value="match">
-		<button type="submit"> here.</submit>
+		<button type="submit"> Like.</submit>
 	</form>
 </div>
 
 <div>
-Skip:  
+Dislike:  
 	<form action="/matches/<%= user.id %>/<%= user.name %>" method="POST">
 		<input type="hidden" name="what_to_do" id ="what_to_do" value="skip">
-		<button type="submit"> here.</submit>
+		<button type="submit"> Dislike.</submit>
 	</form>
 </div>

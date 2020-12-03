@@ -3,30 +3,24 @@ var router = express.Router();
 
 // Require controller modules.
 var user_controller = require('../controllers/usersController');
-var index_controller = require('../controllers/indexController');
+var front_controller = require('../controllers/frontController');
 var matches_controller = require('../controllers/matchesController');
 
-/** 
- * Visitor Frontend
- */
+// view frontend
+router.get('/', front_controller.frontpage_get);
 
-router.get('/', index_controller.frontpage_get);
+router.post('/login', front_controller.login_post);
 
-router.post('/login', index_controller.login_post);
+router.get('/logout', front_controller.logout);
 
-router.get('/logout', index_controller.logout);
-
-/**
- * Registered Frontend
- */
-
+//register frontend
 //User register form
 router.get('/register', user_controller.user_create_get);
 
 router.post('/register', user_controller.user_create_post);
 
 
-// User CRUD
+// CRUD for users
 router.get('/user', user_controller.user_detail);
 
 router.get('/user/update', user_controller.user_create_get);
@@ -46,7 +40,7 @@ router.get('/user/:id', user_controller.user_detail);
 router.get('/users', user_controller.user_list_possible_matches);
 
 
-// Matches CRUD
+// CRUD for matches
 router.get('/matches/get-more', matches_controller.show_possible_match);
 
 router.post('/matches/:id/:name', matches_controller.make_skip_match);

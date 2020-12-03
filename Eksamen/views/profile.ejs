@@ -1,11 +1,18 @@
-<h2>Welcome</h2>
-<p><%= user.email %></p>
-<p><%= user.name %></p>
-<br><br>
-You are interested in: <p><%= user.interest %> - <a href="/matches/get-more">get more matches here</a></p>
-<div>
-See all matches <a href="/matches"> here. </a>
-</div>
-<div>
-<a href="/logout">Log out</a>
+<div style="text-align: center;">
+    <h2>Welcome to your startpage on Tinder2</h2>
+    <p>Below is your log in/profile information</p>
+    <p style="font-weight: bold;">Email:</p>
+    <p><%= user.email %></p> <!-- %= escaping -->
+    <p style="font-weight: bold;">User Name:</p>
+    <p><%= user.name %></p>
+    <p style="font-weight: bold;">Password:</p>
+    <p><%= user.password %></p>
+<p style="font-weight: bold;">You chosed interest in:</p> <p><%= user.interest %> - <a href="/matches/get-more">Se more possible matches here</a></p>
+    <div>
+        <p style="font-weight: bold;">View your matches: <a href="/matches"> here. </a></p>
+    </div>
+    <div>
+        <p>For logout, please click below</p>
+    <a href="/logout">Log out</a> 
+    </div>
 </div>
