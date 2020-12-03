@@ -35,7 +35,8 @@ exports.user_create_get = function(req, res) {
     res.sendFile(path.join(__dirname + '/../views/register.html'));
 };
 
-// User create (POST), insert all values and if succesfull redirect to user page
+// User create (POST), from User class, insert all values and if succesfull redirect to user page
+//HENT USER CLASS HVIS MULIGT
 exports.user_create_post = function(req, res) {
     var email = req.body.email;
 	var password = req.body.password;
