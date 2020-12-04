@@ -17,7 +17,9 @@ exports.user_detail = function(req, res) {
 			if (results.length > 0) {
 
 				var user = results[0];
-
+				req.session.gender = user.gender;
+				req.session.interest = user.interest;
+				
 				res.render(path.join(__dirname + '/../views/profile'), {
 			        user: user
 			    });
@@ -50,6 +52,7 @@ exports.user_create_post = function(req, res) {
 			if (err) {
 				throw err;
 			} else {
+
 				req.session.loggedin = true;
 				req.session.email = email;
 				res.redirect('/user');

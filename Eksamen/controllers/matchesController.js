@@ -137,7 +137,8 @@ exports.see_all_matches = function(req, res) {
 					        user_name: current_user.name
 					    });
 
-					} 		
+					} 	
+					res.end();	
 				}); 
 		   	});
 
