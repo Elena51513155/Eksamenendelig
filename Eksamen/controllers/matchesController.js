@@ -1,5 +1,6 @@
-//var User = require('../models/user');
+var User = require('../model/user');
 var path = require('path');
+
 
 var config = require('../database/dbConfig.js');
 var con = config.connection;
