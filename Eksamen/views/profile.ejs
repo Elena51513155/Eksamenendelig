@@ -1,3 +1,8 @@
+<%
+    var deleteLink = '/user/' + user.id + '/delete';
+    var updatePasswordLink = '/user/' + user.id + '/updatepassword/' + '1234';
+%>
+
 <div style="text-align: center;">
     <h2>Welcome to your startpage on Tinder2</h2>
     <p>Below is your log in/profile information</p>
@@ -15,4 +20,13 @@
         <p>For logout, please click below</p>
     <a href="/logout">Log out</a> 
     </div>
+    <div>
+        <p>For deleteting profile, please click below</p>
+        <a href=<%= deleteLink %>>Delete</a> 
+    </div>  
+    <div>
+        <input type="text" id="newPassword">
+        <a href=<%= updatePasswordLink %>>Update Password</a>
+    </div>
 </div>
+    

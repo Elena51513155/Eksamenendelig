@@ -19,7 +19,7 @@ exports.user_detail = function(req, res) {
 				var user = results[0];
 				req.session.gender = user.gender;
 				req.session.interest = user.interest;
-				
+
 				res.render(path.join(__dirname + '/../views/profile'), {
 			        user: user
 			    });
@@ -38,7 +38,7 @@ exports.user_create_get = function(req, res) {
 };
 
 // User create (POST), from User class, insert all values and if succesfull redirect to user page
-//HENT USER CLASS HVIS MULIGT
+
 exports.user_create_post = function(req, res) {
     var email = req.body.email;
 	var password = req.body.password;
@@ -66,30 +66,89 @@ exports.user_create_post = function(req, res) {
 
 // Display user delete form on GET.
 exports.user_delete_get = function(req, res) {
-
-
-	if(request.session.loggedin == true) {
-
-		
+	console.log("SESSION ID: " + req.params.id);
+	
+	if(req.session.loggedin == true) {
+		con.query(`DELETE FROM users WHERE id = ${req.params.id}`, function (err, result) {
+			if (err) {
+				throw err;
+			} else {
+				// TODO redirect to frontpage?
+			}
+		});
 	}
 	else {
 		
 	}
+	
+    res.send('user delete POST');
 
-    res.send('NOT IMPLEMENTED: user delete GET');
+	res.redirect('/')
 };
 
 // Handle user delete on POST.
 exports.user_delete_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: user delete POST');
+	if(req.session.loggedin == true) {
+		con.query(`DELETE FROM users WHERE id = ${req.session.id}`, function (err, result) {
+			if (err) {
+				throw err;
+			} else {
+				// TODO redirect to frontpage?
+			}
+		});
+	}
+	else {
+		
+	}
+    res.send('user delete POST');
 };
 
-// Display user update form on GET.
+// Display user update from on GET.
 exports.user_update_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: user update GET');
+		
+	if(req.session.loggedin == true) {
+		con.query(`UPDATE users set password = ${req.params.newpassword} WHERE id = ${req.params.id}`, function (err, result) {
+			if (err) {
+				throw err;
+			} else {
+				// TODO redirect to frontpage?
+			}
+		});
+	}
+	else {
+		
+	}
+    res.send('user update GET');
+};
+
+// Update Password
+exports.user_update_password_get = function(req, res) {
+		
+	if(req.session.loggedin == true) {
+		con.query(`UPDATE users set password = ${req.params.newpassword} WHERE id = ${req.params.id}`, function (err, result) {
+			if (err) {
+				throw err;
+			} else {
+				// TODO redirect to frontpage?
+			}
+		});
+	}
+	else {
+		
+	}
+    res.send('user update GET');
 };
 
 // Handle user update on POST.
 exports.user_update_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: user update POST');
+	if (req.session.loggedin) {
+		const { name } = req.body;
+
+		con.query(`UPDATE users SET name = ${name} WHERE email = ${req.session.email}`)
+
+		// TODO redirect.
+	} else {
+
+	}
+    res.send('user update POST');
 };
