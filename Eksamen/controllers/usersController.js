@@ -39,7 +39,7 @@ exports.user_create_post = function (req, res) {
 	let user = new User(req.body.email, req.body.password, req.body.name, req.body.interest, req.body.gender)
 
 
-	if (!user.email || !user.password) {
+	if (user.email && user.password) {
 		var sql = "INSERT INTO users (name, gender, interest, email, password) VALUES (?, ?, ?, ?, ?)";
 		config.connection.query(sql, [user.name, user.gender, user.interest, user.email, user.password], function (err, result) {
 			if (err) {
