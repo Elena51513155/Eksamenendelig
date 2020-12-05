@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path'); //handles the menu
 
 // Require controller modules.
 var user_controller = require('../controllers/usersController');
@@ -10,6 +11,8 @@ var matches_controller = require('../controllers/matchesController');
 router.get('/', front_controller.frontpage_get);
 
 router.post('/login', front_controller.login_post);
+
+router.get('/login/', (req, res) => res.sendFile(path.join(__dirname + '/../views/login.html')));
 
 router.get('/logout', front_controller.logout);
 

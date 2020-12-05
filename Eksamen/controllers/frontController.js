@@ -8,6 +8,7 @@ exports.frontpage_get = function(req, res) {
 	if(req.session.loggedin == true && req.session.email) {
 		res.redirect('/user');
 	}
+
     res.sendFile(path.join(__dirname + '/../views/login.html'));
 };
 

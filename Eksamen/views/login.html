@@ -1,16 +1,17 @@
-
-    <!-- Login Form -->
-    <form action="/login" method="POST" style="text-align: center;">
-      <h1>Log in page</h1>
-      <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email">
-      <br></br>
-      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
-      <br></br>
-      <input type="submit" class="fadeIn fourth" value="Log In">
-      <br></br>
-    </form>
-
-  
-
-  </div>
-</div>
+<!-- Login Form -->
+<script> // is deleted skal med i query, user controller l. 68
+  const urlParams = new URLSearchParams(window.location.search);
+  console.log(window.location.search + ":)")
+  if (urlParams.is_deleted) {
+    alert("User has been deleted!")
+  }
+</script>
+<form action="/login" method="POST" style="text-align: center;">
+  <h1>Log in page</h1>
+  <input type="text" id="email"  name="email" placeholder="Email">
+  <br></br>
+  <input type="password" id="password" name="password" placeholder="password">
+  <br></br>
+  <input type="submit" value="Log In">
+  <br></br>
+</form>
