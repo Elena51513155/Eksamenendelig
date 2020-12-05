@@ -1,3 +1,5 @@
+/*
+
 const { expect } = require("chai");
 const { logout } = require("../controllers/frontController");
 
@@ -15,4 +17,18 @@ const { logout } = require("../controllers/frontController");
         }
     
     )
+    */
+
+
+const { response } = require("express");
+const expect = require("chai").expect
+const fetch = require("node-fetch")
+describe("Vi tester log out endpoint", function(){  
+    it('should return > HTML file <', function () {
+     fetch("http://localhost:3006").then(response => {
+         response.should.have.status(200)
+     })
+   
+    });
+})
 	

@@ -14,7 +14,7 @@ connection.connect(function(err) { //show if i am connected and count Id's with 
     return;
   }
 
-  console.log('connected as id ' + connection.threadId);
+  console.log('Connected to server and connected as id ' + connection.threadId);
 });
 
 module.exports = {
