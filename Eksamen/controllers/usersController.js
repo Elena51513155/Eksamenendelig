@@ -5,7 +5,7 @@ var config = require('../database/dbConfig.js');
 
 // Show list of all users, click the button
 exports.user_list_possible_matches = function (req, res) {
-	res.send('NOT IMPLEMENTED: user possible matches list');
+	res.send('See a list of possible matches');
 };
 
 // show a detailed page for a specific user.
@@ -15,7 +15,7 @@ exports.user_detail = function (req, res) {
 		config.connection.query('SELECT * FROM users WHERE email = ?', [req.session.email], function (error, results, fields) {
 			if (results.length) {
 				req.session.gender = results[0].gender;
-				req.session.interest = results[0].interest;
+				req.session.interest = results[0].interest; //obejctoriented programming
 
 				res.render(path.join(__dirname + '/../views/profile'), {
 					user: results[0]
@@ -51,12 +51,12 @@ exports.user_create_post = function (req, res) {
 			}
 		});
 	} else {
-		res.send('Please enter Username and Password!');
+		res.send('Enter valid email and password');
 		res.end();
 	}
 };
 
-// Display user delete form on GET.
+// User delete -get.
 exports.user_delete_get = function (req, res) {
 	console.log("SESSION ID: " + req.params.id);
 
@@ -65,8 +65,8 @@ exports.user_delete_get = function (req, res) {
 			if (err) {
 				res.send('Internal servererror!\n' + err);
 			} else {
-				res.redirect('/login/?is_deleted=True');
-				//res.send('user delete POST');
+				//res.redirect('/login/?is_deleted=True');
+				res.send('User deleted and removed from database');
 
 			}
 		});
@@ -74,19 +74,19 @@ exports.user_delete_get = function (req, res) {
 
 }
 
-// Handle user delete on POST.
+// User delete - post.
 exports.user_delete_post = function (req, res) {
 	if (req.session.loggedin) {
 		config.connection.query(`DELETE FROM users WHERE id = ${req.session.id}`, function (err, result) {
 			if (err) {
-				throw err;
+				res.send('Internal servererror!\n' + err);
 			} else {
 				res.redirect("/login/?")
 			}
 		});
 	}
 
-	res.send('user delete POST');
+	res.send('User deleted and removed from database');
 };
 
 // Display user update from on GET.
@@ -94,7 +94,7 @@ exports.user_update_get = function (req, res) {
 	if (req.session.loggedin == true) {
 		config.connection.query(`UPDATE users set password = ${req.params.newpassword} WHERE id = ${req.params.id}`, function (err, result) {
 			if (err) {
-				throw err;
+				res.send('Internal servererror!\n' + err);
 			} else {
 				// TODO redirect to frontpage?
 			}
@@ -112,7 +112,7 @@ exports.user_update_password_get = function (req, res) {
 	if (req.session.loggedin == true) {
 		config.connection.query(`UPDATE users set password = ${req.params.newpassword} WHERE id = ${req.params.id}`, function (err, result) {
 			if (err) {
-				throw err;
+				res.send('Internal servererror!\n' + err);
 			} else {
 				// TODO redirect to frontpage?
 			}
