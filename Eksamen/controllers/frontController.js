@@ -1,3 +1,4 @@
+var User = require('../model/user');
 var path = require('path'); //handles the menu
 
 var config = require('../database/dbConfig.js'); //get the dbConfig
@@ -12,11 +13,9 @@ exports.frontpage_get = function(req, res) {
 };
 
 exports.login_post = function(req, res) {
-
-    var email = req.body.email;
-	var password = req.body.password;
-
-	if (email && password) { //getting user information from mySql, and check password and email + log in status true
+	let user = new User(req.body.email, req.body.password)
+  
+	if (user.email && user.password) { //getting user information from mySql, and check password and email + log in status true
 		con.query('SELECT * FROM users WHERE email = ? AND password = ?', [req.body.email, req.body.password], function(error, results, fields) {
 			if (results.length > 0) {
 
@@ -40,11 +39,11 @@ exports.login_post = function(req, res) {
 };
 
 exports.logout = function(req, res) {
-
-    var email = req.session.email;
+	let user = new User(req.session.email, req.session.password)
+  
 	var loggedin = req.session.loggedin;
 
-	if (email && loggedin) { 
+	if (user.email && loggedin) { 
 		req.session.destroy(); //remove log in, and go out from session
 	}
 	res.redirect('/'); //redirect to host page
