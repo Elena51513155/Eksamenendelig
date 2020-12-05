@@ -39,7 +39,7 @@ router.get('/user/:id', user_controller.user_detail);
 
 router.get('/users', user_controller.user_list_possible_matches);
 
-router.get('/user/:id/updatepassword/:newpassword', user_controller.user_update_password_get);
+router.post('/user/:id/updatepassword/:newpassword', user_controller.user_update_password_get);
 
 
 // CRUD for matches

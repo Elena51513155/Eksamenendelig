@@ -5,7 +5,7 @@ class User {
     this.name = name;
     this.interest = interest;
     this.gender = gender;  
-}
+    }
 }
 
 module.exports = User;
