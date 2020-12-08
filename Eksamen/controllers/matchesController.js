@@ -1,7 +1,6 @@
 var User = require('../model/user');
 var path = require('path');
-
-
+var Match = require('../model/user');
 var config = require('../database/dbConfig.js');
 
 function fetchID_and_name(req, callback) {
@@ -46,6 +45,7 @@ exports.make_skip_match = function (req, res) {
 		var what_to_do = req.body.what_to_do;
 
 		//update last_match_check_id
+		let match = new Match(req.last_m_id, req.match_id, req.last_m_name, req.match_name)
 		config.connection.query('UPDATE users SET last_match_check_id = ? WHERE email = ?', [match_id, req.session.email], function (error, results, fields) { });
 		fetchID_and_name(req,  (last_m_id, last_m_name) => {
 			switch (what_to_do) {

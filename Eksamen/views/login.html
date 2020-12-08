@@ -1,3 +1,28 @@
+<link rel="stylesheet" src="/Eksamen/public/styles.css">
+
+<style>
+  body {
+    background-color: #eeeeee;
+    vertical-align: middle;
+  }
+
+  .loginform {
+    background-color: white;
+    box-shadow: 0px 3px 5px 1px rgb(0, 0, 0, 0.5);
+    width: 300px;
+    position: absolute;
+    top: 30%;
+    left: calc(50% - 150px);
+  }
+
+  .button {
+    background-color: blue;
+    color: white;
+  }
+
+
+</style>
+
 <!-- Login Form -->
 <script> // is deleted skal med i query, user controller l. 68
   const urlParams = new URLSearchParams(window.location.search);
@@ -6,12 +31,14 @@
     alert("User has been deleted!")
   }
 </script>
-<form action="/login" method="POST" style="text-align: center;">
-  <h1>Log in page</h1>
-  <input type="text" id="email"  name="email" placeholder="Email">
-  <br></br>
-  <input type="password" id="password" name="password" placeholder="password">
-  <br></br>
-  <input type="submit" value="Log In">
-  <br></br>
-</form>
+<div class="loginform">
+  <form action="/login" method="POST" style="text-align: center;">
+    <h1>Log in page</h1>
+    <input type="text" id="email"  name="email" placeholder="Email">
+    <br></br>
+    <input type="password" id="password" name="password" placeholder="password">
+    <br></br>
+    <input class="button" type="submit" value="Log In">
+    <br></br>
+  </form>
+</div>

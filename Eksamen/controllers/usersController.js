@@ -65,8 +65,8 @@ exports.user_delete_get = function (req, res) {
 			if (err) {
 				res.send('Internal servererror!\n' + err);
 			} else {
-				//res.redirect('/login/?is_deleted=True');
-				res.send('User deleted and removed from database');
+				res.redirect('/register');
+				//res.send('User deleted and removed from database');
 
 			}
 		});
@@ -81,12 +81,13 @@ exports.user_delete_post = function (req, res) {
 			if (err) {
 				res.send('Internal servererror!\n' + err);
 			} else {
-				res.redirect("/login/?")
+				//res.send('User deleted and removed from database');
+				res.redirect('/register');
 			}
 		});
 	}
 
-	res.send('User deleted and removed from database');
+	
 };
 
 // Display user update from on GET.
@@ -108,9 +109,10 @@ exports.user_update_get = function (req, res) {
 
 // Update Password
 exports.user_update_password_get = function (req, res) {
-
+	console.log("TEST");
+	console.log(req.body.newPassword);
 	if (req.session.loggedin == true) {
-		config.connection.query(`UPDATE users set password = ${req.params.newpassword} WHERE id = ${req.params.id}`, function (err, result) {
+		config.connection.query(`UPDATE users set password = ${req.body.newPassword} WHERE id = ${req.params.id}`, function (err, result) {
 			if (err) {
 				res.send('Internal servererror!\n' + err);
 			} else {
