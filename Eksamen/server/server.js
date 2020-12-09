@@ -7,13 +7,12 @@ var cors = require('cors');
 var allRoutes = require('../routes/site');
 
 
-//middleware, tjek dette link
-// https://www.reddit.com/r/node/comments/6tu503/newbie_secret_resave_saveuninitialized_in_sessions/
+//middleware
 var app = express();
 app.use(session({ //local storage & cookies
 	secret: 'tinder2',
 	resave: true,
-	saveUninitialized: true
+	saveUninitialized: false
 }));
 
 app.use(cors());

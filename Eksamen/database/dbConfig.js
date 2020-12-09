@@ -3,7 +3,7 @@ var mysql = require('mysql'); //information to my mySql
 var db_config = {
   host: 'localhost',
   user: 'root',
-  password: 'rootroot', //ændre password
+  password: 'rootroot', 
   database: 'eksamen'
 };
 
@@ -17,7 +17,7 @@ db_connection.connect(function (err) { //show if i am connected and count Id's w
     console.log('Connecting successful');
   }
 
-  console.log('Server connection details:' + db_connection.threadId);
+  console.log('Server connection details: ' + db_connection.threadId);
 });
 
 module.exports = {

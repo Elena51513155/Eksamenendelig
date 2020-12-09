@@ -97,18 +97,18 @@ exports.user_update_get = function (req, res) {
 			if (err) {
 				res.send('Internal servererror!\n' + err);
 			} else {
-				// TODO redirect to frontpage?
+		
 			}
 		});
 	}
 	else {
 
 	}
-	res.send('user update GET');
+	res.send('Password is updated');
 };
 
 // Update Password
-exports.user_update_password_get = function (req, res) {
+exports.user_update_password_post = function (req, res) {
 	console.log("TEST");
 	console.log(req.body.newPassword);
 	if (req.session.loggedin == true) {
@@ -116,27 +116,27 @@ exports.user_update_password_get = function (req, res) {
 			if (err) {
 				res.send('Internal servererror!\n' + err);
 			} else {
-				// TODO redirect to frontpage?
+				
 			}
 		});
 	}
 	else {
 
 	}
-	res.send('user update GET');
+	res.send('Password is updated');
 };
 
 // Handle user update on POST.
 exports.user_update_post = function (req, res) {
-	if (req.session.loggedin) {
+	if (req.session.loggedin) { 
 		const { name } = req.body;
 
 		config.connection.query(`UPDATE users SET name = ${name} WHERE email = ${req.session.email}`)
 
-		// TODO redirect.
+	
 	} else {
 
 	}
-	res.send('user update POST');
+	res.send('Password is updated');
 };
 
