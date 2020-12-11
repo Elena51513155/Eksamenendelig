@@ -1,0 +1,125 @@
+commit 8963ed09c2dd8f3c2ab4ceb1e1175daad0bb731f
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Fri Dec 11 03:30:59 2020 +0100
+
+    "last changes"
+
+commit 8db9c77ca4d302f0738d7721bb94e43ba063756b
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Wed Dec 9 23:45:50 2020 +0100
+
+    "small adjustments (cleaning up the code)"
+
+commit b2cca26507551a976fafd4e90df775a4fe1a02ed
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Tue Dec 8 13:39:41 2020 +0100
+
+    "small adjustments"
+
+commit dc11ddd5af4148f3cd2f2e048bb11f1b1b0ec448
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Tue Dec 8 13:39:18 2020 +0100
+
+    CSS, UPDATE password done and other small adjustments
+
+commit 60fb97f468103aa378159de30a61db784021237c
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Tue Dec 8 13:38:49 2020 +0100
+
+    "CSS, UDATE password and small adjustemnts"
+
+commit e69cbaa5d5027cfe0009cdc7ac4713564eb2edba
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Sun Dec 6 00:21:18 2020 +0100
+
+    "more debugging"
+
+commit 218f84e16e990a2a52d827a8073c386d97b72309
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Sun Dec 6 00:07:57 2020 +0100
+
+    "small fixing"
+
+commit 451b796e14e663e6a8ef5a885717aec0899ec3cc
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Sat Dec 5 22:04:32 2020 +0100
+
+    "fixing small debugs"
+
+commit 627299e7ff44901f497ba60c7bdeb764949480b8
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Sat Dec 5 21:04:38 2020 +0100
+
+    "progress"
+
+commit 4719d7ed4f907d75cc59cdcf46e29d20c9b8af86
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Sat Dec 5 13:23:05 2020 +0100
+
+    "Update"
+
+commit ee82814faa79a5e0d35558e87f6cda99d0df9ee7
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Sat Dec 5 12:35:20 2020 +0100
+
+    "Testing and object class"
+
+commit 4dad49a56b0ed4954326032eec10d4ced571884d
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Fri Dec 4 17:13:08 2020 +0100
+
+    "DELETE & CREATE"
+
+commit ad8ce98ff9768b2b95ccaa87d8cddcf98a09cf2c
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Fri Dec 4 14:30:31 2020 +0100
+
+    "match works"
+
+commit 2957062f6f5c2ebb35c0d9267f93553ffedd2921
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Fri Dec 4 12:03:38 2020 +0100
+
+    "tried to test with mocha and chai"
+
+commit a3e42d3664d49ece0193b079ec30de72a4e0f26f
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Fri Dec 4 11:02:18 2020 +0100
+
+    "new npm package"
+
+commit 3a1c11255347a2029266c207a582080e5a450f3f
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Thu Dec 3 14:50:59 2020 +0100
+
+    "test2"
+
+commit 91a12e660569ceaa298453c9fed8d4a0176a695d
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Thu Dec 3 13:11:37 2020 +0100
+
+    "added simple CSS"
+
+commit edeb0cf2f7cd59af2450d052f68a6eba83c88825
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Wed Dec 2 20:26:34 2020 +0100
+
+    "master"
+
+commit d2373b7128c124ec92cbfd170070caa8f6ac980f
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Wed Dec 2 20:22:47 2020 +0100
+
+    git add *
+
+commit e6c3d8c336c87bfa9b79a8238577b4b8fdb33480
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Mon Nov 30 16:46:03 2020 +0100
+
+    register and login start
+
+commit 2dfadbac66247dc221e18845a31b7239be64d835
+Author: Elena Frees <elfr20ab@student.cbs.dk>
+Date:   Mon Nov 30 16:39:13 2020 +0100
+
+    first commit
