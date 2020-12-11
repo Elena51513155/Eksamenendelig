@@ -23,7 +23,7 @@ exports.login_post = function(req, res) {
 					results[0].name, 
 					results[0].interest, 
 					results[0].gender
-				)//Objektorienteret,klk ind på parametre for at se
+				)//Getting the user class and its parametres
 
 				if (user.password == req.body.password) {
 					req.session.loggedin = true;

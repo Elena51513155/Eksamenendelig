@@ -43,7 +43,6 @@ exports.make_skip_match = function (req, res) {
 		var match_id = req.params.id;
 		var match_name = req.params.name;
 		var what_to_do = req.body.what_to_do;
-
 		//update last_match_check_id
 		// Object is used later in the match process. 16.39
 		let match = new Match(req.last_m_id, req.match_id, req.last_m_name, req.match_name);

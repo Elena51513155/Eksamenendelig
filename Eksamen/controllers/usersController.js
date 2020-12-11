@@ -29,7 +29,7 @@ exports.user_detail = function (req, res) {
 	}
 };
 
-// Display user create form on GET.
+// Display user create form 
 exports.user_create_get = function (req, res) {
 	res.sendFile(path.join(__dirname + '/../views/register.html'));
 };
@@ -74,42 +74,9 @@ exports.user_delete_get = function (req, res) {
 
 }
 
-// User delete - post.
-exports.user_delete_post = function (req, res) {
-	if (req.session.loggedin) {
-		config.connection.query(`DELETE FROM users WHERE id = ${req.session.id}`, function (err, result) {
-			if (err) {
-				res.send('Internal servererror!\n' + err);
-			} else {
-				//res.send('User deleted and removed from database');
-				res.redirect('/register');
-			}
-		});
-	}
-
-	
-};
-
-// Display user update from on GET.
-exports.user_update_get = function (req, res) {
-	if (req.session.loggedin == true) {
-		config.connection.query(`UPDATE users set password = ${req.params.newpassword} WHERE id = ${req.params.id}`, function (err, result) {
-			if (err) {
-				res.send('Internal servererror!\n' + err);
-			} else {
-		
-			}
-		});
-	}
-	else {
-
-	}
-	res.send('Password is updated');
-};
 
 // Update Password
 exports.user_update_password_post = function (req, res) {
-	console.log("TEST");
 	console.log(req.body.newPassword);
 	if (req.session.loggedin == true) {
 		config.connection.query(`UPDATE users set password = ${req.body.newPassword} WHERE id = ${req.params.id}`, function (err, result) {
@@ -121,20 +88,6 @@ exports.user_update_password_post = function (req, res) {
 		});
 	}
 	else {
-
-	}
-	res.send('Password is updated');
-};
-
-// Handle user update on POST.
-exports.user_update_post = function (req, res) {
-	if (req.session.loggedin) { 
-		const { name } = req.body;
-
-		config.connection.query(`UPDATE users SET name = ${name} WHERE email = ${req.session.email}`)
-
-	
-	} else {
 
 	}
 	res.send('Password is updated');

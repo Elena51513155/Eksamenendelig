@@ -18,7 +18,6 @@ app.use(session({ //local storage & cookies
 app.use(cors());
 app.use(body_parser.urlencoded({extended : true}));
 app.use(body_parser.json());
-app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs'); //engine set, so I dont have to load template
 
 

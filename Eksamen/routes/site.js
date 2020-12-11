@@ -26,17 +26,7 @@ router.post('/register', user_controller.user_create_post);
 // CRUD for users
 router.get('/user', user_controller.user_detail);
 
-router.get('/user/update', user_controller.user_create_get);
-
-router.post('/user/update', user_controller.user_create_post);
-
 router.get('/user/:id/delete', user_controller.user_delete_get);
-
-router.post('/user/:id/delete', user_controller.user_delete_post);
-
-router.get('/user/:id/update', user_controller.user_update_get);
-
-router.post('/user/:id/update', user_controller.user_update_post);
 
 router.get('/user/:id', user_controller.user_detail);
 
